@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
 	}
 
 	cv::imshow("sorted biel", sorted_image);
-	imwrite("sorted_biel.png", image);
+	imwrite("sorted_biel.png", sorted_image);
 	cv::waitKey();
 
 	return 0;
