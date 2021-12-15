@@ -7,7 +7,7 @@ using namespace std;
 
 
 void read_coordinates(int& x, int& y, int& width, int& height) {
-	cout << "Digite as coordenadas do retangulo: " << endl;
+	cout << "Write the rectangle area to invert: " << endl;
 	cout << "x: "; cin >> x;
 	cout << "y: "; cin >> y;
 	cout << "width: "; cin >> width;
@@ -25,11 +25,11 @@ void invert_image_region(Mat& image, int x, int y, int width, int height) {
 
 
 int main(int argc, char** argv) {
-    cv::Mat image;
+	cv::Mat image;
 
-    image = cv::imread(argv[1], cv::IMREAD_GRAYSCALE);
-    if (!image.data) {
-        std::cout << "nao abriu a imagem .png" << std::endl;
+	image = cv::imread(argv[1], cv::IMREAD_GRAYSCALE);
+	if (!image.data) {
+		std::cout << "The image could not be opened." << std::endl;
 		exit(-1);
 	}
     
@@ -37,9 +37,9 @@ int main(int argc, char** argv) {
 	read_coordinates(x, y, width, height);
 	invert_image_region(image, x, y, width, height);
 
-    cv::imshow("imagem invertida", image);
-    imwrite("biel_invertido.png", image);
-    cv::waitKey();
+	cv::imshow("inverted image", image);
+	imwrite("inverted_biel.png", image);
+	cv::waitKey();
 	
     return 0;
 }
